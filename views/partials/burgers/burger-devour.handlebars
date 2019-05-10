@@ -5,5 +5,10 @@
         {{#if devoured}}
             <button data-id="{{id}}" data-newdevoured="{{devoured}}" class="change-devoured"> EAT ME</button>
         {{/if}}
+
+        {{#unless devoured}}
+            {{!-- <button data-id="{{id}}" type="button" class="trash" id="trash-button">Throw in trash</button> --}}
+            <button type="button" class="trashburger btn btn-danger" id ="trash-button" data-id="{{this.id}}" data-newDevoured="{{devour}}">THROW AWAY</button>
+        {{/unless}}
 </li>
 

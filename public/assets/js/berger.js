@@ -34,7 +34,7 @@ $(".create-burger").on("submit", function(event) {
 
     // console.log(newBurger)
     $.ajax("/api/burgers",  {
-        type: "post",
+        type: "POST",
         data: newBurger
     }).then(
         function(){
@@ -42,14 +42,22 @@ $(".create-burger").on("submit", function(event) {
             location.reload();
         }
     ) 
-        
-        
-    
-})
+});
+
+$("#trash-button").on("click", function(event) {
+    event.preventDefault();
+    // console.log($(this).data("id"))
+    var id = $(this).data("id")
+
+    $.ajax({
+        type: "DELETE",
+        url:"api/burgers/" + id
+    }).then(location.reload());
+});
 
 
 
-})
+});
 
 
 
