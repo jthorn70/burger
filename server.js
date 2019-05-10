@@ -1,7 +1,10 @@
 var express = require("express");
 
-var PORT = process.env.PORT || 3000;
+
+var routes = require("./controllers/burgers_controllers.js");
+
 var app = express();
+var PORT = process.env.PORT || 8080;
 
 app.use(express.static("public"));
 
@@ -13,11 +16,10 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/burgers_controllers.js");
 
-app.use(routes);
+app.use('/',routes);
 
-app.listen(process.env.PORT || 3000, function() {
+app.listen(PORT, function() {
     console.log("Server is running on http://localhost: " + PORT);
 })
 
