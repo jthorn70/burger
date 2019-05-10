@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/jthorn70/burger/issues"
   },
-  "homepage": "https://github.com/jthorn70/burger#readme"
+  "homepage": "https://github.com/jthorn70/burger#readme",
+  "keywords": []
 }
